@@ -1,0 +1,32 @@
+body{
+    width: 900px;
+    height: 900px;
+    margin: auto;
+    background: lightcyan;
+}
+
+h1{
+    font-family: monospace;
+    padding: 100px;
+    
+}
+a{
+    font-size: 24px;
+}
+
+#left{
+    background: lightblue;
+    width: 20%;
+    height: 100%;
+    float: left;
+    text-align: center;
+}
+
+#right{
+    background: lightcoral;
+    width: 80%;
+    height: 100%;
+    float: right;
+    text-align: center;
+}
+
