@@ -1,11 +1,13 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-    <title>LTI - Larsen & Toubro Infotech</title>
-    <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
-    <script src='js/main.js'></script>
+  <title>LTI - Larsen & Toubro Infotech</title>
+  <link href="https://fonts.googleapis.com/css?family=Muli&display=swap" rel="stylesheet">
+  <link rel='stylesheet' type='text/css' media='screen' href='style/style.css'>
+  <script src='js/main.js'></script>
 </head>
+
 <body>
   <div>
     <h1>Login Form</h1>
@@ -26,32 +28,53 @@
         </form>
       </table>
       <section id="error"></section>
+      
+      <section id="myFact">
+        
+      </section>
+      
+      <section id="mySum">
+
+      </section>
     </section>
   </div>
-      
-      <script>
-        function loginCheck(){
-          //alert("function check")
-          var user = document.getElementById("username").value;
-          var pass = document.getElementById("password").value;
-          var isError = false;
-          var errorMsg = "";
-          if(user == ""){
-            isError = true;
-            errorMsg += "Username is required.<br>";
-          }
-          if(pass == ""){
-            isError = true;
-            errorMsg += "Password is required!";
-          }
-          if(isError){
-            document.getElementById("error").innerHTML = errorMsg;
-          }
-          else
-          {
-            document.getElementById("error").innerHTML="Login Successful";
-          }
-        }
-      </script>
+
+  <script>
+    function loginCheck() {
+      //alert("function check")
+      var user = document.getElementById("username").value;
+      var pass = document.getElementById("password").value;
+      var isError = false;
+      var errorMsg = "";
+      if (user == "") {
+        isError = true;
+        errorMsg += "Username is required.<br>";
+      }
+      if (pass == "") {
+        isError = true;
+        errorMsg += "Password is required!";
+      }
+      if (isError) {
+        document.getElementById("error").innerHTML = errorMsg;
+      } else {
+        document.getElementById("error").innerHTML = "Login Successful";
+      }
+    }
+
+    function fact() {
+      var n = document.getElementById("num").value;
+      var fact = 1;
+      var sum = 0;
+      for (var i = 1; i <= n; i++) {
+        fact = fact * i;
+      }
+      for (var i = 1; i <= n; i++) {
+        sum = sum + i;
+      }
+      document.getElementById("myFact").innerHTML = fact;
+      document.getElementById("mySum").innerHTML = sum;
+    }
+  </script>
 </body>
+
 </html>

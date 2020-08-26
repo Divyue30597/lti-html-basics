@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculate</title>
+    <script>
+        function calculateSumFact()
+        {
+            var num1=document.getElementById("number").value;
+            if(!(num1>0&&num1<20))
+            {
+                document.getElementById("result").innerHTML="u are an idiot u entered a wrong value" ;
+            }
+            else{
+            var fact=1;
+            var sum=0;
+            for(var i=1;i<=num1;i++)
+            {
+                fact=fact*i;
+                sum=sum+i;
+            }
+            var result="Factorial is:"+fact+"<br> sum is:"+sum;
+            document.getElementById("result").innerHTML =result;}
+            
+        }
+    </script>
+</head>
+
+<body>
+    <section>
+        <table>
+            <tr>
+                <th><label>Enter The number</label></th>
+                <th><input type="text" id="number" name="number"></th>
+            </tr>
+            <tr>
+                <td><input type="button" value="Calculate" onclick="calculateSumFact()"></td>
+            </tr>
+        </table>
+        <section id="result"></section>
+    </section>
+
+</body>
+
+</html>
