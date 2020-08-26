@@ -7,46 +7,50 @@
     <script src='js/main.js'></script>
 </head>
 <body>
-    <div class="header">
-      <h1>Welcome to LTI</h1>    
-    </div>
-
-      
-      <div class="row">
-        <div class="main">
-          <div class="card">
-            <h2 style="text-align: center;">Login to a world of opportunities!</h2>
-            <form>
-              
-                <div class="container">
-                  <label for="uname"><b>Username</b></label>
-                  <input type="text" placeholder="Enter Username" name="uname" pattern="[A-Za-z0-9]{3,5}" required> 
-                                
-                  <label for="psw"><b>Password</b></label>
-                  <input type="password" placeholder="Enter Password" name="psw" required>
-              
-                  <button type="submit" onclick="loginCheck()">Login</button>
-                  <label>
-                    <input type="checkbox" checked="checked" name="remember"> Remember me
-                  </label>
-                </div>
-              
-                <div class="container" style="background-color:#f1f1f1">
-                  <button type="button" class="cancelbtn">Cancel</button>
-                  <span class="psw">Forgot <a href="#">password?</a></span>
-                </div>
-              </form>
-          </div>
-        </div>
-      </div>
-
-      <div class="footer">
-        <p>© 2020 Larsen & Toubro Infotech Limited</p>
-      </div>     
+  <div>
+    <h1>Login Form</h1>
+    <section>
+      <table>
+        <form action="">
+          <tr>
+            <td><label>User</label></td>
+            <td><input type="text" id="username" name="username"></td>
+          </tr>
+          <tr>
+            <td><label>Password</label></td>
+            <td><input type="password" id="password" name="password"></td>
+          </tr>
+          <tr>
+            <td colspan="2"><input type="button" value="Login" onclick="loginCheck()"></td>
+          </tr>
+        </form>
+      </table>
+      <section id="error"></section>
+    </section>
+  </div>
       
       <script>
         function loginCheck(){
-          alert("function check")
+          //alert("function check")
+          var user = document.getElementById("username").value;
+          var pass = document.getElementById("password").value;
+          var isError = false;
+          var errorMsg = "";
+          if(user == ""){
+            isError = true;
+            errorMsg += "Username is required.<br>";
+          }
+          if(pass == ""){
+            isError = true;
+            errorMsg += "Password is required!";
+          }
+          if(isError){
+            document.getElementById("error").innerHTML = errorMsg;
+          }
+          else
+          {
+            document.getElementById("error").innerHTML="Login Successful";
+          }
         }
       </script>
 </body>
